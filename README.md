@@ -4,7 +4,9 @@
 
 **Right-click any webpage image → send it to Grok / ChatGPT / Gemini / Claude (or a custom AI chat) with your prompt.** Chrome Extension · Manifest V3 · MIT.
 
-> Screenshots: add images under `docs/` later (e.g. `docs/screenshot-menu.png`) and link them here. Optional for the first release.
+## 界面截图 Screenshot
+
+![AI Image Sender 设置界面：选择目标站点、编辑默认提示词](screenshot.png)
 
 ---
 
