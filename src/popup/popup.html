@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Image Sender</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>AI Image Sender</h1>
+    <p class="sub">把网页图片一键发到 AI 对话</p>
+  </header>
+
+  <label class="field">
+    <span>目标 / Target</span>
+    <select id="target"></select>
+  </label>
+
+  <label class="field">
+    <span>默认转换提示词 / Prompt</span>
+    <textarea id="prompt" rows="8" spellcheck="false"></textarea>
+  </label>
+
+  <label class="check">
+    <input type="checkbox" id="autoSubmit" />
+    <span>自动点击发送（谨慎）/ Auto-submit</span>
+  </label>
+
+  <div class="actions">
+    <button type="button" id="save" class="primary">保存设置</button>
+    <button type="button" id="options">选项 / Options</button>
+  </div>
+
+  <p class="hint">
+    用法：在任意图片上<strong>右键 → Send to…</strong> 选择 Grok / ChatGPT / Gemini / Claude。<br />
+    Right-click any image → <strong>Send to…</strong>
+  </p>
+
+  <p id="status" class="status" hidden></p>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

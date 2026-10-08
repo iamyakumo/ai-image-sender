@@ -1,0 +1,33 @@
+# Dependencies / build
+node_modules/
+dist/
+build/
+.out/
+*.crx
+*.pem
+*.zip
+!docs/**/*.zip
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs / local
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.*
+!.env.example
+
+# Chrome / packaging leftovers
+*.crx.meta
+_metadata/
+.chrome/

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Image Sender — Options</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main>
+    <h1>AI Image Sender 选项</h1>
+    <p class="lede">默认支持 Grok / ChatGPT / Gemini / Claude；下方可添加自定义 AI 站点。</p>
+
+    <section class="card">
+      <h2>默认提示词</h2>
+      <textarea id="prompt" rows="10" spellcheck="false"></textarea>
+      <label class="check">
+        <input type="checkbox" id="autoSubmit" />
+        自动点击发送（站点 DOM 变化时可能误触，默认关闭）
+      </label>
+      <button type="button" id="saveGeneral" class="primary">保存通用设置</button>
+    </section>
+
+    <section class="card">
+      <h2>自定义目标</h2>
+      <p class="help">
+        添加后会请求该站点的 host 权限。需要填写对话页 URL，以及尽量准确的 CSS 选择器
+        （<code>input[type=file]</code>、输入框、可选发送按钮）。
+      </p>
+
+      <div class="grid">
+        <label>名称<input id="cName" placeholder="My AI" /></label>
+        <label>对话 URL<input id="cUrl" placeholder="https://example.com/chat" /></label>
+        <label>文件选择器<input id="cFile" placeholder="input[type=file]" /></label>
+        <label>拖放区选择器<input id="cDrop" placeholder="可选" /></label>
+        <label>提示词选择器<input id="cPrompt" placeholder="textarea 或 [contenteditable]" /></label>
+        <label>发送按钮选择器<input id="cSubmit" placeholder="可选" /></label>
+        <label class="full">该站点默认提示词（可选，留空则用全局）
+          <textarea id="cDefaultPrompt" rows="3" placeholder="可选"></textarea>
+        </label>
+      </div>
+      <div class="row">
+        <button type="button" id="addCustom" class="primary">添加 / 更新</button>
+        <button type="button" id="requestPerm">请求该 URL 权限</button>
+      </div>
+      <input type="hidden" id="cEditId" value="" />
+
+      <table id="customTable">
+        <thead>
+          <tr>
+            <th>名称</th>
+            <th>URL</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>导入 / 导出</h2>
+      <div class="row">
+        <button type="button" id="exportBtn">导出 JSON</button>
+        <label class="filebtn">导入 JSON<input type="file" id="importFile" accept="application/json,.json" hidden /></label>
+      </div>
+      <textarea id="importArea" rows="4" placeholder="或粘贴 JSON 后点下方导入"></textarea>
+      <button type="button" id="importPaste">从文本框导入</button>
+    </section>
+
+    <p id="status" class="status" hidden></p>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>
